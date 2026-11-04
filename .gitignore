@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.DS_Store
+.vscode/
+.idea/
+
+# data, weights and outputs
+/data/
+/work/
+/work_dirs/
+/checkpoints/
+/third_party/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.parquet
+*.log

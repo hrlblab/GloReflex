@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gloreflex"
+version = "1.0.0"
+description = "GloReflex: experience-guided self-correction for detector-agnostic glomerulus segmentation"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+# Dependencies are listed in requirements.txt (and per detector framework in the
+# README) so that installing the package never changes the torch build of an env.
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["gloreflex*"]

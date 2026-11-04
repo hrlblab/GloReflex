@@ -1,0 +1,13 @@
+# Correction layer (tested: Python 3.11, torch 2.6.0+cu124). Install PyTorch for your CUDA first.
+# SAM2 is installed from https://github.com/facebookresearch/sam2 (see README).
+torch>=2.3
+numpy
+pandas
+pyarrow
+scikit-learn>=1.2
+opencv-python-headless
+Pillow
+pycocotools
+openslide-python
+tifffile
+transformers>=4.56

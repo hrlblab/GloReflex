@@ -1,0 +1,24 @@
+# MaskDINO R50 instance segmentation (official 50-epoch recipe: batch 16, AdamW, LR 1e-4).
+# Changes: one class, the dataset, and the schedule expressed as 50 epochs on our data
+# (50,214 annotated training tiles / 16 = 3,139 it/epoch -> 156,950 iterations; the LR steps
+# keep the official ratios). Clone MaskDINO into third_party/MaskDINO (see README).
+_BASE_: ../../../third_party/MaskDINO/configs/coco/instance-segmentation/maskdino_R50_bs16_50ep_3s.yaml
+
+MODEL:
+  SEM_SEG_HEAD:
+    NUM_CLASSES: 1
+
+DATASETS:
+  TRAIN: ("glo_instseg_train",)
+  TEST: ("glo_instseg_val",)
+
+TEST:
+  EVAL_PERIOD: 20000
+
+SOLVER:
+  IMS_PER_BATCH: 16
+  BASE_LR: 0.0001
+  MAX_ITER: 156950
+  STEPS: (139511, 151137)
+
+OUTPUT_DIR: work_dirs/maskdino
